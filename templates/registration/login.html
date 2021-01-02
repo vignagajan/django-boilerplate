@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Log In{% endblock %}
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+{% endblock %}
+{% block content %}
+<div class="login-form">
+   <form method="post">
+      {% csrf_token %}
+      <h2 class="text-center">Log in</h2>
+      <hr />
+      <div class="form-group"> 
+          <label>Email: </label>
+            {{ form.username}}
+        </div>
+        <div class="form-group">
+            <label>Password: </label>
+            {{ form.password}}
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Log In</button>
+   </form>
+</div>
+{% endblock %}
