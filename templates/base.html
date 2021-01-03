@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  
   <title>dj | {% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+
+  <!-- Bootstrap 4.3.1 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom css -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+
+  <!-- Font awsome js-->
+  <script src="https://use.fontawesome.com/a69eb28f47.js"></script>
+
+  
+  
 {% block style %} 
 {% endblock %}
 </head>
 <body>
-  <main>
+    {% include "includes/nav.html" %}
     {% block content %}
     {% endblock %}
-  </main>
+    {% include "includes/foo.html" %}
 </body>
 </html>

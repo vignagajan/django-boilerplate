@@ -1,6 +1,6 @@
 .login-form {
     width: 340px;
-    margin: 50px auto;
+    margin: 100px auto;
 }
 .login-form form {
     margin-bottom: 15px;
@@ -26,4 +26,12 @@ input {
 .btn {
     font-size: 15px;
     font-weight: bold;
+}
+
+.site-footer {
+
+   position:fixed;
+   bottom:0;
+   width: 100%;
+
 }
