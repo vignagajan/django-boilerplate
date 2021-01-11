@@ -4,6 +4,8 @@ from django.utils import timezone
 from apps.users.managers import UserManager
 
 class User(AbstractBaseUser, PermissionsMixin):
+    first_name = models.CharField(max_length=255, default="")
+    last_name = models.CharField(max_length=255, default="")
     email = models.EmailField(unique=True, null=True, db_index=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -13,3 +15,5 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
 
     objects = UserManager()
+
+    

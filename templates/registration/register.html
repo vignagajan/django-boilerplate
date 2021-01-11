@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-{% block title %}Log In{% endblock %}
+{% block title %}Register{% endblock %}
 {% block style %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/reg.css' %}">
 {% endblock %}
 {% block content %}
-<div class="login-form">
+<div class="reg-form">
     {% if user.is_authenticated %}
     <div class="alert alert-danger text-center" >
     <strong>You already logged in! </strong> 
@@ -30,7 +30,7 @@
             {% for error in field.errors %}
             <div class="alert alert-danger alert-dismissible" >
                 <button type="button" class="close" data-dismiss="alert">×</button>
-                <strong>Invalid Login!</strong>
+                <strong>Registration Failed!</strong>
                 <p>{{ error }}</p>
             </div>
             {% endfor %}
@@ -38,18 +38,20 @@
         {% for error in form.non_field_errors %}
             <div class="alert alert-danger alert-dismissible" >
                 <button type="button" class="close" data-dismiss="alert">×</button>
-                <strong>Invalid Login!</strong>
+                <strong>Registration Failed!</strong>
                 <p>{{ error }}</p>
             </div>
         {% endfor %}
     {% endif %}
-
-    <div class="forgot float-right">
-    <a href="#">Forgot password?</a>
-    </div>
-    <button type="submit" class="btn btn-dark btn-block">Log In</button>
-    <div class="sign-up">
-        Don't have an account? <a href="{% url 'register' %}">Create One</a>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" required>
+        <label class="form-check-label" for="gridCheck">
+          I agree to the djBP <a href="{% url 'terms' %}">Terms of Service</a> and <a href="{% url 'privacy' %}">Privacy Policy</a>
+        </label>
+      </div>
+    <button type="submit" class="btn btn-dark btn-block">Register</button>
+    <div class="login">
+        Already have an account? <a href="{% url 'login' %}">Login here!</a>
     </div>
    </form>
    {% endif %}
