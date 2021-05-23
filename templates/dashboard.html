@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Log In{% endblock %}
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+{% endblock %}
+{% block content %}
+<div class="user-card text-center">
+	<h1><i class="fa fa-user-circle fa-3x"></i></h1>
+	<h2>{{ request.user.first_name }} {{ request.user.last_name }} </h2>
+	<p>{{ request.user.email }}</p>
+	<p class="text-end badge bg-success text-wrap">Last Login : {{ request.user.last_login}}</p>
+	<p class="text-end badge bg-danger text-wrap">Join Date: {{ request.user.date_joined}}</p>
+	<a class="btn btn-dark btn-block" href="{% url 'logout' %}" role="button">Logout</a>
+</div>
+{% endblock %}

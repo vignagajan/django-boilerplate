@@ -1,3 +1,9 @@
+/* Custom font */
+p,
+div {
+  font-family: "Nobile", Helvetica, Arial, sans-serif;
+}
+
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
@@ -29,8 +35,4 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
-}
-
-.navbar {
-  margin-bottom: 20px;
 }

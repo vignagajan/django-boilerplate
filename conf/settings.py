@@ -14,7 +14,7 @@ ALLOWED_HOSTS = []
 
 
 AUTH_USER_MODEL = 'users.User'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'home'
 
 # Application definition
